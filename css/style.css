@@ -1,0 +1,136 @@
+@font-face {
+  font-family: "dr";
+  src: url("../fonts/dr.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@keyframes anim_logo {
+  40% {
+    transform: translateX(10px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes anim1 {
+  40% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "dr", sans-serif;
+  font-size: 70px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header__container {
+  display: flex;
+}
+.header__text {
+  margin-left: 50%;
+  transform: translateX(calc(-50% - 75px));
+}
+
+.timer {
+  flex: 1 1 auto;
+}
+
+.timer__items {
+  display: flex;
+  justify-content: center;
+  font-size: 80px;
+}
+@media (max-width: 415px) {
+  .timer__items {
+    font-size: 50px;
+  }
+}
+
+.timer__item {
+  position: relative;
+  min-width: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.timer__item::before {
+  content: attr(data-title);
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  font-size: 14px;
+}
+
+.timer__item:not(:last-child)::after {
+  content: ":";
+  position: absolute;
+  right: -15px;
+}
+
+.content__container {
+  padding: 10% 0 10% 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 960px) {
+  .content__container {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media (max-width: 415px) {
+  .content__container {
+    justify-content: flex-start;
+  }
+}
+.content__image {
+  transform: rotate(12deg);
+}
+.content__image_scale {
+  transform: scale(-1, 1) rotate(12deg);
+}
+.content__image img {
+  filter: grayscale(1);
+}
+
+.animation-logo {
+  animation: anim_logo 2s infinite;
+}
+
+.content__image .animation-img {
+  width: 200px;
+  height: 200px;
+  filter: grayscale(0);
+  animation: anim1 2s infinite;
+  animation-fill-mode: forwards;
+}
+
+.body {
+  background-image: url("../img/connf.gif");
+}
+
+/*# sourceMappingURL=style.css.map */
